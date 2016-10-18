@@ -258,9 +258,7 @@ IncludeTemplateLangFile(__FILE__);
                 </div>
                 <div class="col-sm-4 col-xs-12 text-center" id="bx-composite-banner"></div>
                 <div class="col-sm-4 col-xs-12">
-                    <a class="bizsolutions_logo clearfix" href="http://bizsolutions.ru" title="Центр интернет-маркетинга &quot;Бизнес решения&quot;">
-                        <img src="http://bizsolutions.ru/images/biz_logo.png" class="pull-right">
-                    </a>
+                    
                 </div>
 
             </div>
