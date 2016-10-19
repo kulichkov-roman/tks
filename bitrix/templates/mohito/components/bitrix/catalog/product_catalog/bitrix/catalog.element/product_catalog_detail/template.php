@@ -56,6 +56,7 @@
                         }
                         ?>
                         <div class="pricing-v1 pricing-v1<?= $tableColor?>">
+                            <?if($arResult["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"] > 0) {?>
                             <div class="pricing-v1-header text-center">
                                 <h5>
                                     <i class="fa fa-rouble"></i><?= number_format($arResult["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"], 0, ".", " ") ?>
@@ -64,7 +65,7 @@
                                     <? } ?>
                                 </h5>
                             </div>
-
+                            <?}?>
                             <ul class="list-unstyled pricing-v1-content">
                                 <?
                                 $arMainProps = array("BRAND", "ARTICLE", "COLOR");
