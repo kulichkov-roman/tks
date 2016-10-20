@@ -8,11 +8,11 @@ $aMenuLinks=$APPLICATION->IncludeComponent(
 	"", 
 	array(
 		"IS_SEF" => "Y",
-		"SEF_BASE_URL" => "/catalog/",
+		"SEF_BASE_URL" => "/zapchcaty/",
 		"SECTION_PAGE_URL" => "#SECTION_CODE#/",
 		"DETAIL_PAGE_URL" => "#SECTION_CODE#/#ELEMENT_ID#",
 		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => getIBlockIdByCode("product_catalog"),
+		"IBLOCK_ID" => 37,
 		"SECTION_ID" => "",
 		"DEPTH_LEVEL" => "4",
 		"CACHE_TYPE" => "A",
