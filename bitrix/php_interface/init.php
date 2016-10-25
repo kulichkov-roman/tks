@@ -1,4 +1,12 @@
 <?
+/*
+ * Конфигурация сайта
+ * */
+$configuration = \Bitrix\Main\Config\Configuration::getInstance();
+
+$configuration->add('cityList', 38);
+$configuration->add('cityDefault', 167);
+
 function pre($var, $die = false, $all = false)
 {
     global $USER;

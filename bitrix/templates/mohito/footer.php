@@ -299,6 +299,8 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/wow.js');
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/fancybox/jquery.fancybox.js');
 // custom scripts
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/main.js');
+// developers scripts
+$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/developers.js');
 ?>
 
 <? // Layer Slider on Main page

@@ -71,17 +71,22 @@
         <div class="container top-header">
             <div class="row">
                 <div class="col-xs-8">
-					<div class="city-select">
-						<div class="city-select__current">Новосибирск</div>
-						<ul class="city-select__dropdown">
-							<li class="city-select__dropdown__item"><a class="city-select__dropdown__link" href="#">Новосибирск</a></li>
-							<li class="city-select__dropdown__item"><a class="city-select__dropdown__link" href="#">Омск</a></li>
-							<li class="city-select__dropdown__item"><a class="city-select__dropdown__link" href="#">Красноярск</a></li>
-							<li class="city-select__dropdown__item"><a class="city-select__dropdown__link" href="#">Иркутск</a></li>
-						</ul>
-					</div>
+	                <?
+	                $APPLICATION->IncludeComponent(
+		                "bitrix:main.include", "",
+		                Array(
+			                "AREA_FILE_SHOW" => "file",
+			                "PATH" => "/include/site_templates/city_list.php"
+		                )
+	                );
+	                ?>
                     <!-- Topbar Navigation -->
-                    <?$APPLICATION->IncludeComponent(
+                    <?
+					global $arrContactsFilter;
+                    $arrContactsFilter = array(
+	                    'PROPERTY_CITY_LINK' => $_COOKIE['cityId']
+                    );
+                    $APPLICATION->IncludeComponent(
                         "bitrix:news.list",
                         "contacts_header",
                         array(
@@ -92,7 +97,7 @@
                             "SORT_ORDER1" => "",
                             "SORT_BY2" => "",
                             "SORT_ORDER2" => "",
-                            "FILTER_NAME" => "",
+                            "FILTER_NAME" => "arrContactsFilter",
                             "FIELD_CODE" => array(),
                             "PROPERTY_CODE" => array(
                                 0 => "EMAIL",
