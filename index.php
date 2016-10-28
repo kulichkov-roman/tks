@@ -243,6 +243,38 @@ $APPLICATION->SetTitle("Главная");
                 ); ?>
             </h4>
             <div class="line"></div>
+            <?
+            $APPLICATION->IncludeComponent(
+                "bitrix:catalog.section.list",
+                "catalog",
+                Array(
+            	    "IBLOCK_TYPE" => "catalog",	// Тип инфоблока
+            		"IBLOCK_ID" => "37",	// Инфоблок
+            		"SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
+            		"SECTION_CODE" => "",	// Код раздела
+            		"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+            		"COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
+            		"TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
+            		"SECTION_FIELDS" => array(	// Поля разделов
+            			0 => "",
+            			1 => "",
+            		),
+            		"SECTION_USER_FIELDS" => array(	// Свойства разделов
+            			0 => "",
+            			1 => "",
+            		),
+            		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
+            		"CACHE_TYPE" => "A",	// Тип кеширования
+            		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+            		"CACHE_NOTES" => "",
+            		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+            		"COMPONENT_TEMPLATE" => ".default",
+            		"VIEW_MODE" => "LINE",	// Вид списка подразделов
+            		"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+            	),
+            	false
+            );
+            ?>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:news.list",
                 "portfolio_main_page",

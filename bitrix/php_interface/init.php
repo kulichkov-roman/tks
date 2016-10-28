@@ -1,4 +1,6 @@
 <?
+use \Bitrix\Main\Loader;
+
 /*
  * Конфигурация сайта
  * */
@@ -6,6 +8,21 @@ $configuration = \Bitrix\Main\Config\Configuration::getInstance();
 
 $configuration->add('cityList', 38);
 $configuration->add('cityDefault', 167);
+$configuration->add('w350crPlugId', '260');
+
+Loader::includeModule('itconstruct.uncachedarea');
+
+if(Loader::includeModule('itconstruct.resizer')) {
+
+    itc\Resizer::addPreset(
+        'w350cr', array(
+            'mode'   => 'crop',
+            'width'  => 350,
+            'height' => 350,
+            'type'   => 'jpg'
+        )
+    );
+}
 
 function pre($var, $die = false, $all = false)
 {
