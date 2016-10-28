@@ -245,100 +245,36 @@ $APPLICATION->SetTitle("Главная");
             <div class="line"></div>
             <?
             $APPLICATION->IncludeComponent(
-                "bitrix:catalog.section.list",
-                "catalog",
-                Array(
-            	    "IBLOCK_TYPE" => "catalog",	// Тип инфоблока
-            		"IBLOCK_ID" => "37",	// Инфоблок
-            		"SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
-            		"SECTION_CODE" => "",	// Код раздела
-            		"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
-            		"COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
-            		"TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
-            		"SECTION_FIELDS" => array(	// Поля разделов
+            	"bitrix:catalog.section.list",
+            	"catalog",
+            	array(
+            		"IBLOCK_TYPE" => "catalog",
+            		"IBLOCK_ID" => "2",
+            		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+            		"SECTION_CODE" => "",
+            		"SECTION_URL" => "",
+            		"COUNT_ELEMENTS" => "Y",
+            		"TOP_DEPTH" => "2",
+            		"SECTION_FIELDS" => array(
             			0 => "",
             			1 => "",
             		),
-            		"SECTION_USER_FIELDS" => array(	// Свойства разделов
-            			0 => "",
+            		"SECTION_USER_FIELDS" => array(
+            			0 => "UF_IS_ON_MAIN_PAGE",
             			1 => "",
             		),
-            		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
-            		"CACHE_TYPE" => "A",	// Тип кеширования
-            		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+            		"ADD_SECTIONS_CHAIN" => "Y",
+            		"CACHE_TYPE" => "A",
+            		"CACHE_TIME" => "36000000",
             		"CACHE_NOTES" => "",
-            		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-            		"COMPONENT_TEMPLATE" => ".default",
-            		"VIEW_MODE" => "LINE",	// Вид списка подразделов
-            		"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+            		"CACHE_GROUPS" => "Y",
+            		"COMPONENT_TEMPLATE" => "catalog",
+            		"VIEW_MODE" => "LINE",
+            		"SHOW_PARENT_NAME" => "Y"
             	),
             	false
             );
             ?>
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:news.list",
-                "portfolio_main_page",
-                array(
-                    "IBLOCK_TYPE" => "general_information",
-                    "IBLOCK_ID" => getIBlockIdByCode("portfolio"),
-                    "NEWS_COUNT" => "50",
-                    "SORT_BY1" => "",
-                    "SORT_ORDER1" => "",
-                    "SORT_BY2" => "",
-                    "SORT_ORDER2" => "",
-                    "FILTER_NAME" => "",
-                    "FIELD_CODE" => array(
-                        0 => "",
-                        1 => "",
-                    ),
-                    "PROPERTY_CODE" => array(
-                        0 => "",
-                        1 => "DETAILS_LIST",
-                        2 => "IS_ON_MAIN_PAGE",
-                        3 => "SECTION",
-                        4 => "PROJECT_LINK",
-                        5 => "TECHNOLOGIES_LIST",
-                        6 => "",
-                    ),
-                    "CHECK_DATES" => "Y",
-                    "DETAIL_URL" => "/portfolio/#ELEMENT_CODE#/",
-                    "AJAX_MODE" => "N",
-                    "AJAX_OPTION_JUMP" => "N",
-                    "AJAX_OPTION_STYLE" => "Y",
-                    "AJAX_OPTION_HISTORY" => "N",
-                    "CACHE_TYPE" => "A",
-                    "CACHE_TIME" => "36000000",
-                    "CACHE_FILTER" => "N",
-                    "CACHE_GROUPS" => "Y",
-                    "PREVIEW_TRUNCATE_LEN" => "",
-                    "ACTIVE_DATE_FORMAT" => "",
-                    "SET_STATUS_404" => "N",
-                    "SET_TITLE" => "Y",
-                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                    "ADD_SECTIONS_CHAIN" => "N",
-                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    "PARENT_SECTION" => "",
-                    "PARENT_SECTION_CODE" => "",
-                    "INCLUDE_SUBSECTIONS" => "Y",
-                    "PAGER_TEMPLATE" => "",
-                    "DISPLAY_TOP_PAGER" => "N",
-                    "DISPLAY_BOTTOM_PAGER" => "N",
-                    "PAGER_TITLE" => "Новости",
-                    "PAGER_SHOW_ALWAYS" => "N",
-                    "PAGER_DESC_NUMBERING" => "N",
-                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                    "PAGER_SHOW_ALL" => "Y",
-                    "DISPLAY_DATE" => "N",
-                    "DISPLAY_NAME" => "N",
-                    "DISPLAY_PICTURE" => "N",
-                    "DISPLAY_PREVIEW_TEXT" => "N",
-                    "AJAX_OPTION_ADDITIONAL" => "",
-                    "SET_BROWSER_TITLE" => "Y",
-                    "SET_META_KEYWORDS" => "Y",
-                    "SET_META_DESCRIPTION" => "Y"
-                ),
-                false
-            );?>
             <div class="row">
                 <div class="col-sm-12 col-md-12 padd">
                     <? $APPLICATION->IncludeComponent(
