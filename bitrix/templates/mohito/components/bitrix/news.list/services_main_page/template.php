@@ -11,8 +11,8 @@
         ?>
         <div class="col-sm-6 col-md-3 padd" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
             <div class="single_box style6 wow fadeInUp" data-wow-duration="<?=$count?>s" style="height: 400px; overflow: hidden;">
-                <div class="icons_introimg image-icon"> <!-- Стало меньше классов -->
-                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/> <!-- Вместо <i> <img> -->
+                <div class="icons_introimg image-icon">
+                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/>
                 </div>
                 <h3><?=$arItem["NAME"]?></h3>
                 <p class="introtext"><?=$arItem["DETAIL_TEXT"]?></p>
